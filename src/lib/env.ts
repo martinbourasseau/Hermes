@@ -22,6 +22,10 @@ export function isFormConfigured(): boolean {
   );
 }
 
-/** Les previews et le local ne doivent pas être indexés. */
+/**
+ * Les previews et le local ne doivent pas être indexés.
+ * NEXT_PUBLIC_NOINDEX=true bloque aussi la production, jusqu'à la publication officielle.
+ */
 export const isIndexable =
-  process.env.VERCEL_ENV === "production" || process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
+  process.env.NEXT_PUBLIC_NOINDEX !== "true" &&
+  (process.env.VERCEL_ENV === "production" || process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true");

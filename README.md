@@ -59,7 +59,8 @@ Les pages sont statiques : **redéployer** après avoir ajouté les variables.
 ## Indexation
 
 Previews et local : `noindex` + `robots.txt` bloquant. Seul l'environnement de production Vercel est indexable
-(ou `NEXT_PUBLIC_ALLOW_INDEXING=true`). Définir `NEXT_PUBLIC_SITE_URL` avec le domaine définitif.
+(ou `NEXT_PUBLIC_ALLOW_INDEXING=true`).
+`NEXT_PUBLIC_NOINDEX=true` (défini sur Vercel) bloque l'indexation partout, production comprise : le retirer et redéployer le jour de la publication officielle. Définir `NEXT_PUBLIC_SITE_URL` avec le domaine définitif.
 
 ## Animations
 
